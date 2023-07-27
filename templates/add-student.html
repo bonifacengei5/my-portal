@@ -1,0 +1,16 @@
+{% extends 'master.html' %}
+{%  load static %}
+{% block content %}
+    <div>
+        <h1 CLASS="text-info text-center">ADD STUDENT</h1>
+        <form class="students-form" method="POST"   action="{% url 'add-student' %}">
+            <p>{{ success }}</p>
+            {% csrf_token %}
+            <input required class="form-control" placeholder="Enter Name" name="s-name" type="text"><br>
+            <input required class="form-control" placeholder="Enter gender" name="s-gender" type="text"><br>
+            <input  required class="form-control" placeholder="Enter course" name="s-course" type="text"><br>
+
+            <input class="btn btn-info" value="save"  type="submit">
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <div>
+            <h1 class="text-center text-info ">All students</h1>
+                    <table class="table table-hover table-dark">
+                               <tr>
+                                      <th>Name</th>
+                                    <th>gender</th>
+                                    <th>course</th>
+
+                                    <th>Delete</th>
+                                    <th>Update</th>
+                               </tr>
+                                {% for student in students %}
+                                    <tr>
+                                        <td>{{ student.name }}</td>
+                                        <td>{{ student.gender }}</td>
+                                        <td>{{ student.course }}</td>
+
+                                        <td><a class="btn btn-danger" href="">Delete</a></td>
+                                        <td><a class="btn btn-info" href="">Update</a></td>
+                                    </tr>
+                                {% endfor %}
+                    </table>
+    </div>
+
+
+{% endblock %}
